@@ -1,0 +1,16 @@
+
+==> limpar o cache do git
+git rm -rf --cached .
+
+==> 
+npx tsc --init
+
+==> Inicializar o prisma com um banco de dados
+npx prisma init --datasource-provider SQLite
+
+
+==> Executar a estrutura definida no schema ou para criar um novo migration
+npx prisma migrate dev
+
+==> Abrir a interface de visualização e gerenciamento de dados do prisma
+npx prisma studio
