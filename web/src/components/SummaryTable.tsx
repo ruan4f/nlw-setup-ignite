@@ -19,13 +19,13 @@ type Summary = {
 }[]
 
 export function SummaryTable() {
-const [summary, setSummary] = useState<Summary>([])
+  const [summary, setSummary] = useState<Summary>([])
 
-  useEffect(() =>{
+  useEffect(() => {
     api.get('summary').then(response => {
       setSummary(response.data)
     })
-  },[])
+  }, [])
 
   return (
     <div className="w-full flex">
@@ -49,11 +49,11 @@ const [summary, setSummary] = useState<Summary>([])
           })
 
           return (
-            <HabitDay 
+            <HabitDay
               key={date.toString()}
               date={date}
-              amount={dayInSummary?.amount} 
-              completed={dayInSummary?.completed} 
+              amount={dayInSummary?.amount}
+              completed={dayInSummary?.completed}
             />
           )
         })}
